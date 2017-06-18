@@ -126,10 +126,9 @@ CImg<unsigned char> Hough_transform::process(int vt, float tf, int ft) {
 		printf("x:%d y:%d \n", x, y);
 		plotPoint(x, y, result);
 	}
-    result.display();
+    if (debug_disp)
+        result.display();
     
-    
-
 	return result;
 
 }

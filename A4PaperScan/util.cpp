@@ -97,10 +97,76 @@ CImg<float> Util::MarkInImage(CImg<float>& img, vector<pointData> points, int r)
 }
 
 
+/*
+ *	getHist
+ *	Calculates a normalized gray image's histogram
+ *
+ *	@param:
+ *	T hist[256]: An array to store the images histogram
+ *	CImg<float> img: Image to calculate
+ */
+template <typename T> void getHist(T hist[256], CImg<float> img) {
+    cimg_forXY(img, x, y) {
+        hist[int(img(x,y) * 255)] += 1;
+    }
+}
 
+/*
+ *	histgramEq
+ *	Equalized a histogram
+ *
+ *	@param:
+ *	T hist[256]: A(n) (image/channel)'s histogram
+ *	int size: total pixel number of the image/channel, usually w x h.
+ */
+template <typename T> void histgramEq(T hist[256], int size) {
+    
+    //Caculate cummulative density function
+    for(int i = 1; i < 256; i++) {
+        hist[i] = hist[i] + hist[i-1];
+    }
+    
+    //Compute color transform function for equalization
+    for(int i = 0; i < 256; i++) {
+        hist[i] = float(hist[i]) / size;
+        hist[i] = (unsigned int)(255 * hist[i]);
+    }
+    
+}
 
-
-
+/*
+ *	histgramEq_hsi
+ *	Histogram-equalize a color image using the intensity channel
+ *	on hsi space.
+ *
+ *	@param:
+ *	CImg<unsigned char> in: Image to perform operation
+ *
+ *	@return:
+ *	CImg<unsigned char>: Histogram equalized image
+ */
+CImg<unsigned char> histgramEq_hsi(CImg<unsigned char> in) {
+    
+    CImg<float>in_hsi = in.get_RGBtoHSI();
+    
+    int size = in._width * in._height;
+    
+    float hist_i[256] = {};
+    
+    CImg<float> intensity = in_hsi.get_channel(2);
+    getHist(hist_i, intensity);
+    
+    histgramEq(hist_i, size);
+    
+    //Applying color transform function to image
+    cimg_forXY(intensity, x, y) {
+        in_hsi.atXYZC(x,y,1,2) = hist_i[int(intensity(x,y) * 255)] / 255.0;
+    }
+    
+    CImg<unsigned char> out = in_hsi.get_HSItoRGB();
+    
+    return out;
+}
 
 
 

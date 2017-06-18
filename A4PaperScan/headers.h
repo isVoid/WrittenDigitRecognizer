@@ -5,8 +5,10 @@
 #include <vector>
 #include <list>
 #include <cmath>
+#include <numeric>
 
 #define cimg_use_jpeg
+#define cimg_verbosity 0
 #include "CImg.h"
 
 //Essential to solve X11 conflict with Eigen problem.

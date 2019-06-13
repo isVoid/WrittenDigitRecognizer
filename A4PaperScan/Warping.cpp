@@ -136,11 +136,6 @@ CImg<unsigned char> Warping::processWithInterpolate() {
 /*
 *	sortEdges: sort vertex vector into clock wise order, that is:
 *	top-left, top-right, bottom-right, bottom-left
-*	First compute the center of weight, then the four vertices relate to the center should be: 
-*	|(<,<)		(>,<)|
-*	|		o 		 |
-*	|(<,>)		(>,>)|
-*	Assume that the origin is top left corner.
 */
 void Warping::sortEdges() {
 
@@ -160,10 +155,8 @@ void Warping::sortEdges() {
 	mean.x /= 4.0;
 	mean.y /= 4.0;
 
-    if (verbose){
-        cout << "Geometric center" << endl;
-        cout << mean.x << ' ' << mean.y << endl;
-    }
+    cout << "Geometric center" << endl;
+    cout << mean.x << ' ' << mean.y << endl;
     
 //    //Use Quadlateral center as origin AND convert to polar coordinate
     for (int i = 0; i < 4; i++) {
@@ -176,22 +169,27 @@ void Warping::sortEdges() {
         point_polar pp(sqrt(e[i].x * e[i].x + e[i].y * e[i].y),
                        atan(abs(float(e[i].y) / e[i].x)));
         
+        cout << "Raw Polar Angle: " << pp.theta * 57.3 << endl;
+        cout << "Quadrant: " << q << endl;
         switch (q) {
             case 1:
                 break;
             case 2:
                pp.theta = cimg::PI - pp.theta;
+                break;
             case 3:
                 pp.theta = cimg::PI + pp.theta;
+                break;
             case 4:
                 pp.theta = 2 * cimg::PI - pp.theta;
+                break;
             default:
                 break;
         }
         
         ep.push_back(pp);
         
-        cout << "Polar Angle: " << ep[i].theta << endl;
+        cout << "Polar Angle: " << ep[i].theta * 57.3 << endl;
     }
     
     
@@ -202,11 +200,12 @@ void Warping::sortEdges() {
     edges[3] = edge_copy[idx[1]];
 //    
 //    
-//    cout << "Sorted Edges" << endl;
-//    for (int i = 0; i < 4; i++) {
-//        cout << edges[i].x << " " << edges[i].y << endl;
-//    }
-//    
+    cout << "Sorted Edges" << endl;
+    for (int i = 0; i < 4; i++) {
+        cout << i << ":" << edges[i].x << " " << edges[i].y << " ";
+    }
+    cout << endl;
+//
 //    exit(-1);
 
 //	Single loop over e, sort every vectex into position
@@ -357,6 +356,7 @@ void Warping::projTransform() {
 
     //x contains the parameters of the projection matrix
     VectorXf x = P.colPivHouseholderQr().solve(b);
+//    VectorXf x = P.ldlt().solve(b);
 
     if(verbose) cout << "The solution is:\n" << x << endl;
 

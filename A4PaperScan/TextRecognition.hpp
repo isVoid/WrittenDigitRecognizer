@@ -10,15 +10,17 @@
 #define TextRecognition_hpp
 
 #include "headers.h"
-#include "selective_search.hpp"
+//#include "selective_search.hpp"
+#include "Contour.hpp"
 #include <svm.h>
 
 using namespace std;
 using namespace cimg_library;
+using namespace ct;
 
 void load_model();
 void free_model();
 
-vector<int> recognize_num(const CImg<unsigned char>& image, vector<ss::Rect> regions);
+vector<int> recognize_num(const CImg<unsigned char>& image, vector<Rect> regions);
 
 #endif /* TextRecognition_hpp */

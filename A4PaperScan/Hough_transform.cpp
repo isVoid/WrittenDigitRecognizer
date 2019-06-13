@@ -304,7 +304,7 @@ void Hough_transform::kMeansFiltering() {
         vector<param_space_point> best_error_init;
         double min_error = DBL_MAX;
         
-        while ( itr < 40 )
+        while ( itr < 300 )
         {
             double error = 0;
             best_error_init.reserve(4);

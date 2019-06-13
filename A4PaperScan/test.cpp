@@ -15,7 +15,7 @@ using namespace cimg_library;
 using namespace std;
 
 
-bool debug_disp = false;
+bool debug_disp = true;
 
 /*
 *	Main Function: Provides input of canny and hough parameters.
@@ -49,20 +49,23 @@ int thres_hi = 60;
 int voting_thres = 64;  //Stub, does not have real effect since canny image is binarilized.
 float thres_fac = 0.3;  //Threashold factor for hough space
 int filter_thres = 200; //Filtering radius only for local filtering. Does not have effect now.
+bool do_hist_eq = false;
 
 int main(int argc, char** argv) {
 
+    cout << "You are using Eigen: " << EIGEN_MAJOR_VERSION << "." << EIGEN_MINOR_VERSION << endl;
+    Eigen::initParallel();
+    
     //Load Predict Model First
     load_model();
     
-    char* original_path = "../../data/5.jpg";
-    char* out_path = "../../output/5.jpg";
-    
-    bool do_hist_eq = false;
-    debug_disp = false;
+//    char* original_path = "../../../data/5.jpg";
+    string original_path = "../../../data/5.jpg";
+    string out_path = "../../../output/5.bmp";
+    string txt_out_path = "../../../output/5.txt";
     
 	//Get image
-	CImg<unsigned char> img(original_path);
+	CImg<unsigned char> img(original_path.c_str());
     resize_fac = img._width / 1000;
     cout << resize_fac << endl;
     if (resize_fac == 0) resize_fac = 1;
@@ -74,9 +77,6 @@ int main(int argc, char** argv) {
 	if (do_hist_eq) {
 		resized = histgramEq_hsi(resized);	
 	}
-
-	if (debug_disp)
-		resized.display();
 
 	//Perfrom Canny Edge Detection
 	canny c(resized);
@@ -92,27 +92,46 @@ int main(int argc, char** argv) {
 	vector<point> intersects = ht.getIntersects();
 
 	Warping warp(img, intersects);
-    warp.verbose = false;
+    warp.verbose = debug_disp;
     
 	CImg<unsigned char> warped_result = warp.processWithProjectionTransform();
 
-    CImg<unsigned char> eroded = warped_result.get_erode(3);
-
-    vector<ss::Rect> proposals = text_detection(eroded);
-    
-    vector<int> numbers = recognize_num(eroded, proposals);
-    
-    cout << "Drawing results" << endl;
-    for (int i; i < numbers.size(); i++) {
-        ss::Rect& r = proposals[i];
-//        unsigned char red[] = {255, 0, 0};
-        unsigned char color = 1;
-        char b[256];
-        sprintf(b, "%d", numbers[i]);
-        eroded.draw_text(r.x, r.y, b, &color, 0, 1, 23);
+    //ad-hoc solution, A dynamic orientation finder is not implemented but is discussed in report.
+    if ("../../../data/4.jpg" == original_path)
+    {
+        warped_result.rotate(-90);
     }
+//    warped_result.display();
     
-    eroded.display();
+    CImg<unsigned char> topoed = warped_result.get_erode(3);
+//    CImg<unsigned char> topoed = eroded.get_dilate(2);
+    
+    vector<ct::Rect> proposals = text_detection(topoed);
+    
+    vector<int> numbers = recognize_num(topoed, proposals);
+    
+    ofstream ofs(txt_out_path, ofstream::out);
+    cout << "Drawing results" << endl;
+    for (int i = 0, j = 0; i < proposals.size() && j < numbers.size() ; i++, j++) {
+        ct::Rect& r = proposals[i];
+        if (r.x > 0)
+        {
+            //        unsigned char red[] = {255, 0, 0};
+            ofs << numbers[j] << " ";
+            unsigned char color = 1;
+            char b[256];
+            sprintf(b, "%d", numbers[j]);
+            topoed.draw_text(r.x, r.y, b, &color, 0, 1, 23);
+        }
+        else {
+            ofs << endl;
+            j--;
+        }
+    }
+    ofs.close();
+    
+    topoed.display();
+    topoed.save(out_path.c_str());
 	printf("Result saved to ./output/\n");
 
     free_model();

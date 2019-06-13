@@ -8,7 +8,7 @@
 
 #include "TextDetection.hpp"
 
-bool rectLRTB(const ss::Rect& a, const ss::Rect& b) {
+bool rectLRTB(const Rect& a, const Rect& b) {
 //    float same_line_criteria = 10;
 //    if (abs(a.y - b.y) < same_line_criteria) {
 //        return a.x < b.x;
@@ -20,9 +20,13 @@ bool rectLRTB(const ss::Rect& a, const ss::Rect& b) {
     return tie(a.y, a.x) < tie(b.y, b.x);
 }
 
-vector<ss::Rect> text_detection(CImg<> image) {
+vector<Rect> text_detection(CImg<> image) {
  
-    vector<ss::Rect> proposals = ss::selectiveSearch(image, 500, 3, 25, 200, 5000, 5);
+    CImg<float> tempImage = image.get_RGBtoYCbCr().get_channel(0);
+    ct::Contour contours(tempImage);
+    vector<ct::Rect> proposals = contours.extractRegions();
+    
+//    vector<Rect> proposals = ss::selectiveSearch(image, 500, 3, 25, 200, 5000, 5);
     
     filterBySize(image, proposals);
     
@@ -36,35 +40,40 @@ vector<ss::Rect> text_detection(CImg<> image) {
     
 //    RectangleAll(image, proposals);
     
-    sort(proposals.begin(), proposals.end(), rectLRTB);
+//    sort(proposals.begin(), proposals.end(), rectLRTB);
+    ScanLineDet sld(image._height);
+    ct::vector<Rect> sorted = sld.getSorted(proposals);
     
-    padRegion(image, proposals, 5);
+    padRegion(image, sorted, 5);
     
-    RectangleAll(image, proposals);
+    RectangleAll(image, sorted);
     
-    return proposals;
+    return sorted;
 }
 
-void filterBySize(const CImg<>& image, vector<ss::Rect>& proposals) {
+void filterBySize(const CImg<>& image, vector<Rect>& proposals) {
     
     int size = image._width * image._height;
-    float size_threshold = 0.025;
-//    cout << "Threashold Size: " << size * size_threshold << endl;
+    float size_thres_lower = 0.0005;
+    float size_thres_upper = 0.2;
     
-    proposals.erase(remove_if(proposals.begin(), proposals.end(), [size, size_threshold](const ss::Rect r){
+    cout << "Threashold Size: " << size * size_thres_lower << " " << size * size_thres_upper << endl;
+    
+    proposals.erase(remove_if(proposals.begin(), proposals.end(), [size, size_thres_lower, size_thres_upper](const Rect r){
 //        cout << r.width * r.height << endl;
-        return r.width * r.height > size * size_threshold;
+        return r.width * r.height < size * size_thres_lower || r.width * r.height > size * size_thres_upper ;
     }), proposals.end());
     
 }
 
-void filterByAspectRatio(vector<ss::Rect>& p) {
+void filterByAspectRatio(vector<Rect>& p) {
     
-    p.erase(remove_if(p.begin(), p.end(), [](const ss::Rect& r){ return float(r.width) / r.height > 3; }), p.end());
+    p.erase(remove_if(p.begin(), p.end(), [](const Rect& r){ return float(r.width) / r.height > 4; }), p.end());
+    p.erase(remove_if(p.begin(), p.end(), [](const Rect& r){ return float(r.height) / r.width > 10; }), p.end());
     
 }
 
-void filterByDuplicate(vector<ss::Rect>& p) {
+void filterByDuplicate(vector<Rect>& p) {
     
     vector<size_t> duplicates;
     for (int i = 0; i < p.size(); i++) {
@@ -73,7 +82,7 @@ void filterByDuplicate(vector<ss::Rect>& p) {
         
         for (int j = 0; j < p.size(); j++) {
             
-            ss::Rect intersect = (p[i] & p[j]);
+            Rect intersect = (p[i] & p[j]);
             if (intersect == p[i]) {
                 responses++;
             }
@@ -89,7 +98,7 @@ void filterByDuplicate(vector<ss::Rect>& p) {
         
         size_t count = 0;
         size_t dup_ptr = 0;
-        p.erase(remove_if(p.begin(), p.end(), [&count, &dup_ptr, duplicates](const ss::Rect& r){
+        p.erase(remove_if(p.begin(), p.end(), [&count, &dup_ptr, duplicates](const Rect& r){
             if (dup_ptr > duplicates.size())
                 return false;
             bool d = duplicates[dup_ptr] == count;
@@ -103,24 +112,27 @@ void filterByDuplicate(vector<ss::Rect>& p) {
     
 }
 
-void padRegion(const CImg<>& image, vector<ss::Rect>& p, int padding) {
+void padRegion(const CImg<>& image, vector<Rect>& p, int padding) {
     
     for (auto& r : p) {
         
-        cout << r.x << " " << r.y << " " << r.width << " " << r.height << endl;
-        
-        r.x = r.x - padding < 0 ? 0 : r.x - padding;
-        r.y = r.y - padding < 0 ? 0 : r.y - padding;
-        
-        r.width = r.x + r.width + padding > image.width() ?
+        if (r.x != -1)
+        {
+            //        cout << r.x << " " << r.y << " " << r.width << " " << r.height << endl;
+            
+            r.x = r.x - padding < 0 ? 0 : r.x - padding;
+            r.y = r.y - padding < 0 ? 0 : r.y - padding;
+            
+            r.width = r.x + r.width + padding > image.width() ?
             image.width() - r.x :
-                r.width + padding;
-        
-        r.height = r.y + r.height + padding > image.height() ?
+            r.width + padding;
+            
+            r.height = r.y + r.height + padding > image.height() ?
             image.height() - r.y :
-                r.height + padding;
-        
-        cout << r.x << " " << r.y << " " << r.width << " " << r.height << endl;
+            r.height + padding;
+            
+            //        cout << r.x << " " << r.y << " " << r.width << " " << r.height << endl;
+        }
         
     }
     

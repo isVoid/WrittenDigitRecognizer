@@ -10,21 +10,24 @@
 #define TextDetection_hpp
 
 #include "headers.h"
-#include "selective_search.hpp"
+//#include "selective_search.hpp"
+#include "Contour.hpp"
+#include "ScanLineDetermination.hpp"
 using namespace std;
 using namespace cimg_library;
+using namespace ct;
 
-vector<ss::Rect> text_detection(CImg<> image);
+vector<Rect> text_detection(CImg<> image);
 
-void filterBySize(const CImg<>& image, vector<ss::Rect>& proposals);
+void filterBySize(const CImg<>& image, vector<Rect>& proposals);
 
-void filterByAspectRatio(vector<ss::Rect>& p);
+void filterByAspectRatio(vector<Rect>& p);
 
-void filterByDuplicate(vector<ss::Rect>& p);
+void filterByDuplicate(vector<Rect>& p);
 
-void padRegion(const CImg<>& image, vector<ss::Rect>& p, int padding);
+void padRegion(const CImg<>& image, vector<Rect>& p, int padding);
 
-inline void Rectangle(CImg<unsigned char>& img, ss::Rect r) {
+inline void Rectangle(CImg<unsigned char>& img, Rect r) {
     
     for (int x = r.x; x < r.x + r.width; x++) {
         int y1 = r.y;
@@ -51,12 +54,13 @@ inline void Rectangle(CImg<unsigned char>& img, ss::Rect r) {
     }
 }
 
-inline void RectangleAll(CImg<unsigned char> img, vector<ss::Rect> rs) {
+inline void RectangleAll(CImg<unsigned char> img, vector<Rect> rs) {
     
     CImg<unsigned char> t(img);
     
     for (int i = 0; i < rs.size(); i++) {
-        Rectangle(t, rs[i]);
+        if (rs[i].x > 0)
+            Rectangle(t, rs[i]);
     }
     
     t.display();

@@ -2,6 +2,7 @@
 #define _HEADERS_H_
 
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <list>
 #include <cmath>
@@ -14,6 +15,8 @@
 //Essential to solve X11 conflict with Eigen problem.
 //Ref: http://jasonjuang.blogspot.com/2015/02/how-to-solve-eigen-and-x11-success.html
 #undef Success
+//Use BLAS for acceleration
+#define EIGEN_USE_BLAS
 #include <Eigen/Dense>
 
 /*

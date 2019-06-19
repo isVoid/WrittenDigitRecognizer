@@ -8,6 +8,8 @@
 #include <cmath>
 #include <numeric>
 
+#include "C_TF.hpp"
+
 #define cimg_use_jpeg
 #define cimg_verbosity 0
 #include "CImg.h"

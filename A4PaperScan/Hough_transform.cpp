@@ -32,8 +32,6 @@ int min4(double a, double b, double c, double d) {
 		mi = 3;
 	}
 
-//	cout << a << " " << b << " " << c << " " << d << " " << mi << endl;
-
 	return mi;
 
 }
@@ -59,8 +57,6 @@ Hough_transform::Hough_transform(CImg<unsigned char> _img, CImg<unsigned char> _
 
 }
 
-
-
 /*
 *	process: hough line detection process
 *	Step:
@@ -77,13 +73,11 @@ CImg<unsigned char> Hough_transform::process(int vt, float tf, int ft) {
 	thres_fac = tf;
 	filter_thres = ft;
 
-	printf("to hough space...\n" );
 	toHoughSpace();
 
 	if (debug_disp)
 		hough_space.display();
 
-    printf("threshold in hough space...\n" );
     thresholdInHough();
 
     if (debug_disp)
@@ -92,7 +86,6 @@ CImg<unsigned char> Hough_transform::process(int vt, float tf, int ft) {
     // printf("performing local filtering...\n" );
     // localFiltering();
 
-    printf("performing kmeans filtering...\n" );
     kMeansFiltering();
 
     if(debug_disp) 
@@ -100,30 +93,15 @@ CImg<unsigned char> Hough_transform::process(int vt, float tf, int ft) {
             printf("rho: %f, theta: %d\n", filtered[i].rho, int(filtered[i].theta * 57.296));
         }
 
-    printf("computing intersects...\n" );
     computeIntersects();
-
-//		printf("removing close intersects...\n" );
-//		removeClosePoints();
 
 	if (intersects.size() > 4) {
 		printf("intersects more than 4, extracting largest rectangle...\n");
 		extractLargestRectangle();
 	}
-
-	printf("intersects: %lu\n", intersects.size());
-
-//	printf("Repositioning with harris edge detector...\n");
-//	repositionWithHarris();
-
-//    printf("plotting line...\n" );
-//    plotLine(filtered, result);
-//    result.display();
     
-	printf("plotting points...\n" );
 	for (int i = 0; i < intersects.size(); i++) {
 		int x = intersects[i].x, y = intersects[i].y;
-		printf("x:%d y:%d \n", x, y);
 		plotPoint(x, y, result);
 	}
     if (debug_disp)
@@ -138,8 +116,6 @@ void Hough_transform::toHoughSpace() {
 	int w = cny._width, h = cny._height;
 	int pmax = max(w, h);
 	pmax = ceil(1.414 * pmax);
-
-	printf("w:%d, h:%d, pmax:%d\n",w,h,pmax);
 
 	hough_space.assign(thAxis, 2 * pmax, 1, 1, 0);
 
@@ -339,17 +315,8 @@ void Hough_transform::kMeansFiltering() {
             
             best_error_init.clear();
             itr++;
-            cout << "Ransac iteration: " << itr << " " << min_error << endl;
         }
     }
-
-    
-    cout << filtered[0].rho << " " << filtered[0].theta << endl;
-    cout << filtered[1].rho << " " << filtered[1].theta << endl;
-    cout << filtered[2].rho << " " << filtered[2].theta << endl;
-    cout << filtered[3].rho << " " << filtered[3].theta << endl;
-    
-//    return;
     
     double delta = 1e3;
 	double error = DBL_MAX;
@@ -385,11 +352,6 @@ void Hough_transform::kMeansFiltering() {
 		filtered[2].rho /= double(filtered[2].vote); filtered[2].theta /= filtered[2].vote;
 		filtered[3].rho /= double(filtered[3].vote); filtered[3].theta /= filtered[3].vote;
 
-        cout << filtered[0].rho << " " << filtered[0].theta << endl;
-        cout << filtered[1].rho << " " << filtered[1].theta << endl;
-        cout << filtered[2].rho << " " << filtered[2].theta << endl;
-        cout << filtered[3].rho << " " << filtered[3].theta << endl;
-
 		//Evaluate the error, with weighted error
         prevError = error;
 		error = 0;
@@ -399,7 +361,6 @@ void Hough_transform::kMeansFiltering() {
 			error += v[i].L2(filtered[k]) * v[i].vote;
 		}
 
-		cout << "ITERATION: " << itr << " error: " << error << endl;
 		itr++;
 	}
 

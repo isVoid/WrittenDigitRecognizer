@@ -14,8 +14,7 @@
 using namespace cimg_library;
 using namespace std;
 
-
-bool debug_disp = true;
+bool debug_disp = false;
 
 /*
 *	Main Function: Provides input of canny and hough parameters.
@@ -42,8 +41,8 @@ float resize_fac = 3;
 //Canny Parameter
 int gfs = 5;
 double g_sig = 3;
-int thres_lo = 40;
-int thres_hi = 60;
+int thres_lo = 20;
+int thres_hi = 80;
 
 //Hough Parameter
 int voting_thres = 64;  //Stub, does not have real effect since canny image is binarilized.
@@ -57,17 +56,17 @@ int main(int argc, char** argv) {
     Eigen::initParallel();
     
     //Load Predict Model First
-    load_model();
+//    load_model();
+    load_tfmodel();
     
 //    char* original_path = "../../../data/5.jpg";
-    string original_path = "../../../data/5.jpg";
-    string out_path = "../../../output/5.bmp";
-    string txt_out_path = "../../../output/5.txt";
+    string original_path = "../../../data/4.jpg";
+    string out_path = "../../../output/4.bmp";
+    string txt_out_path = "../../../output/4.txt";
     
 	//Get image
 	CImg<unsigned char> img(original_path.c_str());
     resize_fac = img._width / 1000;
-    cout << resize_fac << endl;
     if (resize_fac == 0) resize_fac = 1;
     
 	CImg<unsigned char> resized(img);
@@ -83,7 +82,7 @@ int main(int argc, char** argv) {
 	c.verbose = debug_disp;
 
 	CImg<unsigned char> cny = c.process(gfs, g_sig, thres_lo, thres_hi);
-
+    
 	//Perform Hough Transform and edge extraction
 	Hough_transform ht(img, cny, resize_fac, debug_disp);
 
@@ -95,33 +94,26 @@ int main(int argc, char** argv) {
     warp.verbose = debug_disp;
     
 	CImg<unsigned char> warped_result = warp.processWithProjectionTransform();
-
-    //ad-hoc solution, A dynamic orientation finder is not implemented but is discussed in report.
-    if ("../../../data/4.jpg" == original_path)
-    {
-        warped_result.rotate(-90);
-    }
-//    warped_result.display();
     
-    CImg<unsigned char> topoed = warped_result.get_erode(3);
-//    CImg<unsigned char> topoed = eroded.get_dilate(2);
+    CImg<unsigned char> topoed = warped_result.get_erode(5);
     
     vector<ct::Rect> proposals = text_detection(topoed);
+//    vector<ct::Rect> proposals = text_projDetection(topoed);
     
-    vector<int> numbers = recognize_num(topoed, proposals);
+    CImg<unsigned char> less_erode = warped_result.get_erode(2);
+//    vector<int> numbers = recognize_num(topoed, proposals);
+    vector<int> numbers = tfrecognize_num(less_erode, proposals);
     
     ofstream ofs(txt_out_path, ofstream::out);
-    cout << "Drawing results" << endl;
     for (int i = 0, j = 0; i < proposals.size() && j < numbers.size() ; i++, j++) {
         ct::Rect& r = proposals[i];
         if (r.x > 0)
         {
-            //        unsigned char red[] = {255, 0, 0};
             ofs << numbers[j] << " ";
             unsigned char color = 1;
             char b[256];
             sprintf(b, "%d", numbers[j]);
-            topoed.draw_text(r.x, r.y, b, &color, 0, 1, 23);
+            less_erode.draw_text(r.x, r.y, b, &color, 0, 1, 23);
         }
         else {
             ofs << endl;
@@ -130,11 +122,10 @@ int main(int argc, char** argv) {
     }
     ofs.close();
     
-    topoed.display();
-    topoed.save(out_path.c_str());
-	printf("Result saved to ./output/\n");
+    less_erode.display();
+    less_erode.save(out_path.c_str());
 
-    free_model();
+//    free_model();
     
 	return 0;
 }

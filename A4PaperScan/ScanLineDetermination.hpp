@@ -150,14 +150,12 @@ public:
 //                    delim.y = -1;
 //                    cout << "Delim x: " << delim.x << endl;
                     sorted.push_back(delim);
-                    cout << "Inserting return" << endl;
                     
                     lastLine = rlp.line;
                 }
                 
             }
             sorted.push_back(rlp.rect);
-            cout << "Sorted: " << rlp.line << " " << rlp.rect.x << " " << rlp.rect.y << endl;
             
         }
         

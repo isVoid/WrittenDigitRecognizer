@@ -23,4 +23,7 @@ void free_model();
 
 vector<int> recognize_num(const CImg<unsigned char>& image, vector<Rect> regions);
 
+void load_tfmodel();
+vector<int> tfrecognize_num(const CImg<unsigned char>& image, vector<Rect> regions);
+
 #endif /* TextRecognition_hpp */

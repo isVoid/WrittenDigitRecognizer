@@ -41,7 +41,6 @@ namespace ct {
                 contours.push_back(contour);
             }
         }
-        cout << "Found Contours: " << contours.size() << endl;;
         
     }
     

@@ -81,7 +81,6 @@ CImg<unsigned char> Warping::processWithProjectionTransform() {
 	}
 
 	//Perform edge vector sorting
-	printf("Sorting Edges into clockwise order...\n");
 	sortEdges();
 
 	//Display sorted edge vector
@@ -154,23 +153,16 @@ void Warping::sortEdges() {
 
 	mean.x /= 4.0;
 	mean.y /= 4.0;
-
-    cout << "Geometric center" << endl;
-    cout << mean.x << ' ' << mean.y << endl;
     
-//    //Use Quadlateral center as origin AND convert to polar coordinate
+    //Use Quadlateral center as origin AND convert to polar coordinate
     for (int i = 0; i < 4; i++) {
         e[i].x -= mean.x;
         e[i].y -= mean.y;
-        
-        cout << "Repositioned: " << e[i].x << " " << e[i].y << endl;
         
         int q = Quadrant(e[i].x, e[i].y);
         point_polar pp(sqrt(e[i].x * e[i].x + e[i].y * e[i].y),
                        atan(abs(float(e[i].y) / e[i].x)));
         
-        cout << "Raw Polar Angle: " << pp.theta * 57.3 << endl;
-        cout << "Quadrant: " << q << endl;
         switch (q) {
             case 1:
                 break;
@@ -189,7 +181,6 @@ void Warping::sortEdges() {
         
         ep.push_back(pp);
         
-        cout << "Polar Angle: " << ep[i].theta * 57.3 << endl;
     }
     
     
@@ -198,14 +189,7 @@ void Warping::sortEdges() {
     edges[1] = edge_copy[idx[3]];
     edges[2] = edge_copy[idx[0]];
     edges[3] = edge_copy[idx[1]];
-//    
-//    
-    cout << "Sorted Edges" << endl;
-    for (int i = 0; i < 4; i++) {
-        cout << i << ":" << edges[i].x << " " << edges[i].y << " ";
-    }
-    cout << endl;
-//
+
 //    exit(-1);
 
 //	Single loop over e, sort every vectex into position
@@ -320,8 +304,6 @@ void Warping::projTransform() {
 	//Half the size on the warped image.
 	w = int(w) / resize_fac;
 	h = int(h) / resize_fac;
-
-    cout << "Width: " << w << " Height: " << h << endl;
     
 	warped.assign(int(w), int(h), 1, 3);
     

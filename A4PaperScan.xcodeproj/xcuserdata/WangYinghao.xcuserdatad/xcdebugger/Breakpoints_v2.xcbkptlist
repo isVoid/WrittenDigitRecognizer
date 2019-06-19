@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Hough_transform.cpp"
-            timestampString = "519229433.564371"
+            timestampString = "582628713.186403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
             landmarkName = "Hough_transform::kMeansFiltering()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,27 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Hough_transform.cpp"
-            timestampString = "519229433.564371"
+            timestampString = "582628713.1872931"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "392"
-            endingLineNumber = "392"
-            landmarkName = "Hough_transform::kMeansFiltering()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "A4PaperScan/Hough_transform.cpp"
-            timestampString = "519190878.189069"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "Hough_transform::process(int vt, float tf, int ft)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Hough_transform.cpp"
-            timestampString = "519229433.564371"
+            timestampString = "582628713.187646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "Hough_transform::kMeansFiltering()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,43 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Hough_transform.cpp"
-            timestampString = "519229433.564371"
+            timestampString = "582628713.18795"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
-            landmarkName = "Hough_transform::kMeansFiltering()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "A4PaperScan/Hough_transform.cpp"
-            timestampString = "519229433.564371"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
-            landmarkName = "Hough_transform::kMeansFiltering()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "A4PaperScan/Hough_transform.cpp"
-            timestampString = "519229433.564371"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "352"
-            endingLineNumber = "352"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
             landmarkName = "Hough_transform::kMeansFiltering()"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Warping.cpp"
-            timestampString = "519237786.476148"
+            timestampString = "582628713.188248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
+            startingLineNumber = "373"
+            endingLineNumber = "373"
             landmarkName = "Warping::projTransform()"
             landmarkType = "7">
             <Locations>
@@ -170,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Warping.cpp"
-            timestampString = "519237786.476148"
+            timestampString = "582628713.18857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "383"
-            endingLineNumber = "383"
+            startingLineNumber = "365"
+            endingLineNumber = "365"
             landmarkName = "Warping::projTransform()"
             landmarkType = "7">
          </BreakpointContent>
@@ -185,28 +137,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "A4PaperScan/test.cpp"
-            timestampString = "519314229.641618"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "main(int argc, char** argv)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "A4PaperScan/TextDetection.cpp"
-            timestampString = "519307589.189371"
+            timestampString = "582628713.1887259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "text_detection(CImg&lt;&gt; image)"
             landmarkType = "9">
          </BreakpointContent>
@@ -218,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/TextDetection.cpp"
-            timestampString = "519307589.189371"
+            timestampString = "582628713.189231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "text_detection(CImg&lt;&gt; image)"
             landmarkType = "9">
          </BreakpointContent>
@@ -234,13 +170,108 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/TextRecognition.cpp"
-            timestampString = "519313481.076165"
+            timestampString = "582628713.189561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "recognize_num(const CImg&lt;unsigned char&gt;&amp; image, vector&lt;ss::Rect&gt; regions)"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "recognize_num(const CImg&lt;unsigned char&gt;&amp; image, vector&lt;Rect&gt; regions)"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "A4PaperScan/Contour.cpp"
+            timestampString = "582628713.189912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "Contour::Contour(CImg&lt;float&gt;&amp; img)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "A4PaperScan/Contour.cpp"
+            timestampString = "582628713.190158"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "Contour::Contour(CImg&lt;float&gt;&amp; img)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "A4PaperScan/Contour.cpp"
+            timestampString = "582628713.190221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "Contour::Contour(CImg&lt;float&gt;&amp; img)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ct::Contour::Contour(cimg_library::CImg&lt;float&gt;&amp;)"
+                  moduleName = "A4PaperScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/WangYinghao/Documents/Xcode%20playground/A4PaperScan/A4PaperScan/Contour.cpp"
+                  timestampString = "521214283.652541"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "382">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ct::Contour::Contour(cimg_library::CImg&lt;float&gt;&amp;)"
+                  moduleName = "A4PaperScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/WangYinghao/Documents/Xcode%20playground/A4PaperScan/A4PaperScan/Contour.cpp"
+                  timestampString = "521214283.654991"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "402">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ct::Contour::Contour(cimg_library::CImg&lt;float&gt;&amp;)"
+                  moduleName = "A4PaperScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/WangYinghao/Documents/Xcode%20playground/A4PaperScan/A4PaperScan/Contour.cpp"
+                  timestampString = "521214283.657573"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

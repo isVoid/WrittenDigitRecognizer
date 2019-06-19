@@ -1,3 +1,4 @@
+#pragma once
 /*
  *      Author: alexanderb
  *		Adapted into CImg dependency by Michael Wang

@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC057E1F22B8DCD0006460A0 /* C_TF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC057E1E22B8DCD0006460A0 /* C_TF.cpp */; };
+		FC057E2722BA3536006460A0 /* harris.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC057E2622BA3536006460A0 /* harris.cpp */; };
 		FC581A901EF22A3700895FAD /* canny.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC58192D1EF22A3600895FAD /* canny.cpp */; };
-		FC581A911EF22A3700895FAD /* harris.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC581A861EF22A3700895FAD /* harris.cpp */; };
 		FC581A921EF22A3700895FAD /* Hough_transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC581A891EF22A3700895FAD /* Hough_transform.cpp */; };
 		FC581A931EF22A3700895FAD /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC581A8B1EF22A3700895FAD /* test.cpp */; };
 		FC581A941EF22A3700895FAD /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC581A8C1EF22A3700895FAD /* util.cpp */; };
@@ -16,6 +17,7 @@
 		FC581BF41EF2C66D00895FAD /* TextDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC581BF21EF2C66D00895FAD /* TextDetection.cpp */; };
 		FCABFC691EF3ADD4007A61E5 /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FCABFC681EF3ADD4007A61E5 /* svm.cpp */; };
 		FCABFC6C1EF3AFB1007A61E5 /* TextRecognition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FCABFC6A1EF3AFB1007A61E5 /* TextRecognition.cpp */; };
+		FCC5BA7C1F10F0F90040FDFC /* Contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FCC5BA7A1F10F0F90040FDFC /* Contour.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,11 +33,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FC057E1D22B8DCC4006460A0 /* C_TF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = C_TF.hpp; path = A4PaperScan/C_TF.hpp; sourceTree = "<group>"; };
+		FC057E1E22B8DCD0006460A0 /* C_TF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C_TF.cpp; sourceTree = "<group>"; };
+		FC057E2422BA352F006460A0 /* harris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = harris.h; path = A4PaperScan/harris.h; sourceTree = "<group>"; };
+		FC057E2522BA352F006460A0 /* selective_search.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = selective_search.hpp; path = A4PaperScan/selective_search.hpp; sourceTree = "<group>"; };
+		FC057E2622BA3536006460A0 /* harris.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = harris.cpp; sourceTree = "<group>"; };
 		FC5817BA1EF228CA00895FAD /* A4PaperScan */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = A4PaperScan; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC58192D1EF22A3600895FAD /* canny.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = canny.cpp; sourceTree = "<group>"; };
 		FC58192E1EF22A3600895FAD /* canny.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = canny.h; path = A4PaperScan/canny.h; sourceTree = "<group>"; };
-		FC581A861EF22A3700895FAD /* harris.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = harris.cpp; sourceTree = "<group>"; };
-		FC581A871EF22A3700895FAD /* harris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = harris.h; path = A4PaperScan/harris.h; sourceTree = "<group>"; };
 		FC581A881EF22A3700895FAD /* headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = headers.h; path = A4PaperScan/headers.h; sourceTree = "<group>"; };
 		FC581A891EF22A3700895FAD /* Hough_transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hough_transform.cpp; sourceTree = "<group>"; };
 		FC581A8A1EF22A3700895FAD /* Hough_transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hough_transform.h; path = A4PaperScan/Hough_transform.h; sourceTree = "<group>"; };
@@ -346,13 +351,15 @@
 		FC581BEB1EF22AF000895FAD /* SuperLUSupport */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SuperLUSupport; sourceTree = "<group>"; };
 		FC581BEC1EF22AF000895FAD /* SVD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SVD; sourceTree = "<group>"; };
 		FC581BED1EF22AF000895FAD /* UmfPackSupport */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UmfPackSupport; sourceTree = "<group>"; };
-		FC581BEE1EF2B00100895FAD /* selective_search.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = selective_search.hpp; path = A4PaperScan/selective_search.hpp; sourceTree = "<group>"; };
 		FC581BF21EF2C66D00895FAD /* TextDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextDetection.cpp; sourceTree = "<group>"; };
 		FC581BF31EF2C66D00895FAD /* TextDetection.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TextDetection.hpp; path = A4PaperScan/TextDetection.hpp; sourceTree = "<group>"; };
 		FCABFC671EF3ADC8007A61E5 /* svm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = svm.h; path = include/svm.h; sourceTree = "<group>"; };
 		FCABFC681EF3ADD4007A61E5 /* svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = svm.cpp; path = include/svm.cpp; sourceTree = "<group>"; };
 		FCABFC6A1EF3AFB1007A61E5 /* TextRecognition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextRecognition.cpp; sourceTree = "<group>"; };
 		FCABFC6B1EF3AFB1007A61E5 /* TextRecognition.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TextRecognition.hpp; path = A4PaperScan/TextRecognition.hpp; sourceTree = "<group>"; };
+		FCC5BA7A1F10F0F90040FDFC /* Contour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Contour.cpp; sourceTree = "<group>"; };
+		FCC5BA7B1F10F0F90040FDFC /* Contour.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Contour.hpp; path = A4PaperScan/Contour.hpp; sourceTree = "<group>"; };
+		FCC5BA7E1F112B100040FDFC /* ScanLineDetermination.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ScanLineDetermination.hpp; path = A4PaperScan/ScanLineDetermination.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,8 +394,10 @@
 		FC5817BC1EF228CA00895FAD /* sources */ = {
 			isa = PBXGroup;
 			children = (
+				FC057E2622BA3536006460A0 /* harris.cpp */,
+				FC057E1E22B8DCD0006460A0 /* C_TF.cpp */,
+				FCC5BA7A1F10F0F90040FDFC /* Contour.cpp */,
 				FC58192D1EF22A3600895FAD /* canny.cpp */,
-				FC581A861EF22A3700895FAD /* harris.cpp */,
 				FC581A891EF22A3700895FAD /* Hough_transform.cpp */,
 				FC581A8B1EF22A3700895FAD /* test.cpp */,
 				FC581A8C1EF22A3700895FAD /* util.cpp */,
@@ -1043,9 +1052,12 @@
 		FCABFC6D1EF3AFC2007A61E5 /* headers */ = {
 			isa = PBXGroup;
 			children = (
-				FC581BEE1EF2B00100895FAD /* selective_search.hpp */,
+				FC057E2422BA352F006460A0 /* harris.h */,
+				FC057E2522BA352F006460A0 /* selective_search.hpp */,
+				FC057E1D22B8DCC4006460A0 /* C_TF.hpp */,
+				FCC5BA7E1F112B100040FDFC /* ScanLineDetermination.hpp */,
+				FCC5BA7B1F10F0F90040FDFC /* Contour.hpp */,
 				FC58192E1EF22A3600895FAD /* canny.h */,
-				FC581A871EF22A3700895FAD /* harris.h */,
 				FC581A881EF22A3700895FAD /* headers.h */,
 				FC581A8A1EF22A3700895FAD /* Hough_transform.h */,
 				FC581A8D1EF22A3700895FAD /* util.h */,
@@ -1096,6 +1108,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = FC5817B11EF228CA00895FAD;
@@ -1113,14 +1126,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC057E1F22B8DCD0006460A0 /* C_TF.cpp in Sources */,
+				FCC5BA7C1F10F0F90040FDFC /* Contour.cpp in Sources */,
 				FCABFC6C1EF3AFB1007A61E5 /* TextRecognition.cpp in Sources */,
 				FC581BF41EF2C66D00895FAD /* TextDetection.cpp in Sources */,
-				FC581A911EF22A3700895FAD /* harris.cpp in Sources */,
 				FC581A931EF22A3700895FAD /* test.cpp in Sources */,
 				FC581A951EF22A3700895FAD /* Warping.cpp in Sources */,
 				FC581A921EF22A3700895FAD /* Hough_transform.cpp in Sources */,
 				FC581A941EF22A3700895FAD /* util.cpp in Sources */,
 				FCABFC691EF3ADD4007A61E5 /* svm.cpp in Sources */,
+				FC057E2722BA3536006460A0 /* harris.cpp in Sources */,
 				FC581A901EF22A3700895FAD /* canny.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1168,10 +1183,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /opt/X11/include;
+				LIBRARY_SEARCH_PATHS = /opt/X11/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "";
+				USE_HEADERMAP = YES;
 			};
 			name = Debug;
 		};
@@ -1209,9 +1229,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /opt/X11/include;
+				LIBRARY_SEARCH_PATHS = /opt/X11/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "";
+				USE_HEADERMAP = YES;
 			};
 			name = Release;
 		};
@@ -1219,18 +1244,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					/usr/X11R6/include/,
-					/usr/local/Cellar/jpeg/8d/include,
+					/usr/local/Cellar/jpeg/9c/include,
 					./include,
+					/opt/X11/include,
 				);
+				LD_RUNPATH_SEARCH_PATHS = $SRCROOT/lib;
 				LIBRARY_SEARCH_PATHS = (
-					/usr/X11R6/lib,
-					/usr/local/Cellar/jpeg/8d/lib,
+					/usr/local/Cellar/jpeg/9c/lib,
+					/opt/X11/lib,
+					./lib,
 				);
 				OTHER_LDFLAGS = (
 					"-lpthread",
 					"-lX11",
 					"-ljpeg",
+					"-lcblas",
+					"-ltensorflow",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1240,18 +1269,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					/usr/X11R6/include/,
-					/usr/local/Cellar/jpeg/8d/include,
+					/usr/local/Cellar/jpeg/9c/include,
 					./include,
+					/opt/X11/include,
 				);
+				LD_RUNPATH_SEARCH_PATHS = $SRCROOT/lib;
 				LIBRARY_SEARCH_PATHS = (
-					/usr/X11R6/lib,
-					/usr/local/Cellar/jpeg/8d/lib,
+					/usr/local/Cellar/jpeg/9c/lib,
+					/opt/X11/lib,
+					./lib,
 				);
 				OTHER_LDFLAGS = (
 					"-lpthread",
 					"-lX11",
 					"-ljpeg",
+					"-lcblas",
+					"-ltensorflow",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -66,4 +66,6 @@ inline void RectangleAll(CImg<unsigned char> img, vector<Rect> rs) {
     t.display();
 }
 
+vector<Rect> text_projDetection(CImg<unsigned char> image);
+
 #endif /* TextDetection_hpp */

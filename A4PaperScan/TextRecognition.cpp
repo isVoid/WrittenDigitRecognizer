@@ -7,10 +7,11 @@
 //
 
 #include "TextRecognition.hpp"
-#include <cstdlib>
 
 svm_model* model;
 svm_node* nodes;
+
+Model tf_model;
 
 CImg<> cimgFromRect(const CImg<>& image, Rect region) {
     
@@ -154,6 +155,73 @@ vector<int> recognize_num(const CImg<unsigned char>& image, vector<Rect> regions
     }
     
     cout << endl;
+    return recognized_num;
+    
+}
+
+void load_tfmodel() {
+    
+    const char* graph_path = "../../../model/graph.pb";
+    const char* checkpoint_path = "../../../model/mnist_-94000";
+    
+    tf_model.load_graph(graph_path);
+    tf_model.create_session();
+    tf_model.restore_weights(checkpoint_path);
+    
+}
+
+vector<int> tfrecognize_num(const CImg<unsigned char>& image, vector<Rect> regions) {
+    
+//    CImg<float> img_f = image.get_normalize(0, 1);
+    vector<int> recognized_num;
+    
+    tf_model.create_output("dense2/BiasAdd", std::vector<float>(10, 0.), {10});
+    
+    for (auto& r : regions) {
+        
+        if (r.x != -1)
+        {
+            CImg<> ROI = cimgFromRect(image, r);
+            
+            //Convert to Gray
+            CImg<> gray = ROI.RGBtoYCbCr().get_channel(0);
+            //Binarilized
+            gray.threshold(128);
+            //Negate
+            CImg<> neg = negative(gray);
+            //Pad Image
+            int padding = 10;
+            CImg<float> pad(neg.width() + 2*padding, neg.height() + 2*padding, 1, 1, 0);
+            cimg_forXY(neg, x, y) {
+                pad(x+padding, y+padding) = neg(x, y);
+            }
+            
+            //Normalize
+            pad.resize(28, 28, 1, 1, 3);
+            //Rethreshold
+            pad.threshold(0.65);
+
+//            pad.display();
+            
+            
+            tf_model.clear_input();
+            tf_model.create_input("input_image", vector<float>(pad.data(),
+                                                               pad.data() + pad.width() * pad.height() * sizeof(float)),
+                                                                {1, 28, 28, 1});
+            
+            int predicted = tf_model.predict();
+            cout << predicted << " ";
+            
+            recognized_num.push_back(predicted);
+            
+        }
+        else
+            cout << endl;
+        
+    }
+    
+    cout << endl;
+    
     return recognized_num;
     
 }

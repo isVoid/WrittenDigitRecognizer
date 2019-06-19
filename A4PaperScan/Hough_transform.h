@@ -68,30 +68,11 @@ public:
 
 	void kMeansFiltering();
 
-	/*
-	*	computeIntersects: Computing the intersects of different lines and the points in a vector
-	*	filtered: hough space points, each represents a line in image space
-	*	intersects: list of intersects
-	*/
 	void computeIntersects();
 
 	void extractLargestRectangle();
 
 	void removeClosePoints();
-
-	/*
-	*	hough_line: hough line detection function
-	*	Step:
-	*	1. Traverse Canny image, vote on hough space
-	*	2. Traverse hough space, threshold usable points
-	*	3. Perform local filtering, reduce duplicates
-	*	4. Compute intersects of lines
-	*	5. Plot Lines and Intersect Points.
-	*/
-
-	CImg<unsigned char> process(int vt, float tf, int ft);
-
-	CImg<unsigned char> repositionWithHarris();
 
 	CImg<int> getHoughSpace();
 
@@ -102,5 +83,18 @@ public:
 	void plotPoint(int x, int y, CImg<unsigned char>& img);
 
 	void plotLine(vector<param_space_point> filtered, CImg<unsigned char>& result);
+    
+    /*
+     *    process: hough line detection function
+     *    Step:
+     *    1. Traverse Canny image, vote on hough space
+     *    2. Traverse hough space, threshold usable points
+     *    3. Perform kmeans filtering, reduce duplicates
+     *    4. Compute intersects of lines
+     *
+     */
+    
+    CImg<unsigned char> process(int vt, float tf, int ft);
+
 
 };

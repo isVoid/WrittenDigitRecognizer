@@ -10,22 +10,17 @@
 #define TextDetection_hpp
 
 #include "headers.h"
-//#include "selective_search.hpp"
 #include "Contour.hpp"
 #include "ScanLineDetermination.hpp"
 using namespace std;
 using namespace cimg_library;
 using namespace ct;
 
-vector<Rect> text_detection(CImg<> image);
+//Detect Text Region via maximum-connected region traverse
+vector<Rect> text_contourDetection(CImg<> image);
 
-void filterBySize(const CImg<>& image, vector<Rect>& proposals);
-
-void filterByAspectRatio(vector<Rect>& p);
-
-void filterByDuplicate(vector<Rect>& p);
-
-void padRegion(const CImg<>& image, vector<Rect>& p, int padding);
+//Detect Text Region via horizontal/vertical projection
+vector<Rect> text_projDetection(CImg<unsigned char> image);
 
 inline void Rectangle(CImg<unsigned char>& img, Rect r) {
     
@@ -66,6 +61,5 @@ inline void RectangleAll(CImg<unsigned char> img, vector<Rect> rs) {
     t.display();
 }
 
-vector<Rect> text_projDetection(CImg<unsigned char> image);
 
 #endif /* TextDetection_hpp */

@@ -8,7 +8,7 @@
 //
 
 #include "headers.h"
-#include "canny.h"
+#include "Canny.h"
 
 typedef unsigned char uchar;
 
@@ -16,41 +16,14 @@ using namespace cimg_library;
 using namespace std;
 
 
-canny::canny(CImg<unsigned char> _img)
+Canny::Canny(CImg<unsigned char> _img)
 {
     img = _img;
 
     verbose = false;
 }
 
-void canny::displayandsave(bool on) {
-
-        if (on){
-            // img.display("Original"); //Original Image
-            // img_disp = CImgDisplay(img, "Original");
-            // gray_disp = CImgDisplay(grayscaled, "Grayscale");
-
-            // CImgList<unsigned char> fil_img_list = CImgList<unsigned char>(gFiltered, sFiltered, nonMaxSupped, thres);
-            // fil_img_disp = CImgDisplay(fil_img_list, "Each Steps");
-            img_disp = CImgDisplay(thres, "result");
-
-            // while (!img_disp.is_closed() && !gray_disp.is_closed() && !fil_img_disp.is_closed()) {
-            while (!img_disp.is_closed()) {
-                img_disp.wait();
-            }
-        }
-
-        char path[256] = "./output/";
-        char name[256];
-        sprintf(name, "%s_gfs%d_gsig%.2f_threslo%d_threshi%d.jpeg", _name, _gfs, _g_sig, _thres_lo, _thres_hi);
-
-        strcat(path, name);
-        cout << "saving to " << path << endl;
-        thres.save_jpeg(path, 70);
-
-}
-
-CImg<unsigned char> canny::process(int gfs = 3, double g_sig = 1, int thres_lo = 20, int thres_hi = 40) {
+CImg<unsigned char> Canny::process(int gfs = 3, double g_sig = 1, int thres_lo = 20, int thres_hi = 40) {
 
     _gfs = gfs;
     _g_sig = g_sig;
@@ -59,17 +32,6 @@ CImg<unsigned char> canny::process(int gfs = 3, double g_sig = 1, int thres_lo =
 
     vector< vector<double> > filter = createFilter(gfs, gfs, g_sig);
 
-    //Print filter
-    // for (int i = 0; i<filter.size(); i++) 
-    // {
-    //     for (int j = 0; j<filter[i].size(); j++) 
-    //     {
-    //         cout << filter[i][j] << " ";
-    //     }
-    //     printf("\n");
-    // }
-    // printf("\n");
-
     if(verbose) cout << "gFilter created" << endl;
     toGrayScale(); //Grayscale the image
     if(verbose) cout << "perform median filter" << endl;
@@ -77,7 +39,7 @@ CImg<unsigned char> canny::process(int gfs = 3, double g_sig = 1, int thres_lo =
     if(verbose) cout << "image converted to grayscale" << endl;
     useFilter(grayscaled, filter); //Gaussian Filter
     if(verbose) cout << "image filtered with Gaussian filter" << endl;
-    sobel(); //Sobel Filter
+    sobel_anglemap(); //Sobel Filter
     if(verbose) cout << "image filtered with sobel filter" << endl;
 
     nonMaxSupp(); //Non-Maxima Suppression
@@ -88,7 +50,7 @@ CImg<unsigned char> canny::process(int gfs = 3, double g_sig = 1, int thres_lo =
     return thres;
 }
 
-void canny::toGrayScale()
+void Canny::toGrayScale()
 {
     grayscaled.assign(img._width, img._height); //To one channel
     cimg_forXY(img, x, y) {
@@ -103,7 +65,7 @@ void canny::toGrayScale()
 
 }
 
-void canny::useMedianFilter() {
+void Canny::useMedianFilter() {
 
     medianFiltered.assign(grayscaled);
     CImg<> N(5,5);
@@ -114,14 +76,12 @@ void canny::useMedianFilter() {
 
         }
     }
-
-
-
+    
     grayscaled.assign(medianFiltered);
 
 }
 
-vector< vector<double> > canny::createFilter(int row, int column, double sigmaIn)
+vector< vector<double> > Canny::createFilter(int row, int column, double sigmaIn)
 {
 	vector< vector<double> > filter;
 
@@ -160,7 +120,7 @@ vector< vector<double> > canny::createFilter(int row, int column, double sigmaIn
 
 }
 
-void canny::useFilter(CImg<unsigned char> img_in, vector< vector<double> > filterIn)
+void Canny::useFilter(CImg<unsigned char> img_in, vector< vector<double> > filterIn)
 {
     int size = (int)filterIn.size()/2;
     gFiltered = CImg<unsigned char>(img_in._width - 2*size, img_in._height - 2*size);
@@ -183,7 +143,7 @@ void canny::useFilter(CImg<unsigned char> img_in, vector< vector<double> > filte
 
 }
 
-void canny::sobel()
+void Canny::sobel_anglemap()
 {
 
     //Sobel X Filter
@@ -245,21 +205,21 @@ void canny::sobel()
 }
 
 
-void canny::nonMaxSupp()
+void Canny::nonMaxSupp()
 {
     nonMaxSupped = CImg<unsigned char>(sFiltered._width-2, sFiltered._height-2);
     for (int i=1; i< sFiltered._width - 1; i++) {
         for (int j=1; j<sFiltered._height - 1; j++) {
             float Tangent = angles(i,j);
-            // cout << Tangent << ' ';
+
             nonMaxSupped(i-1, j-1) = sFiltered(i,j);
-            //Horizontal Edge
+            //Horizontal
             if (((-22.5 < Tangent) && (Tangent <= 22.5)) || ((157.5 < Tangent) && (Tangent <= -157.5)))
             {
                 if ((sFiltered(i,j) < sFiltered(i+1,j)) || (sFiltered(i,j) < sFiltered(i-1,j)))
                     nonMaxSupped(i-1, j-1) = 0;
             }
-            //Vertical Edge
+            //Vertical
             if (((-112.5 < Tangent) && (Tangent <= -67.5)) || ((67.5 < Tangent) && (Tangent <= 112.5)))
             {
                 if ((sFiltered(i,j) < sFiltered(i,j+1)) || (sFiltered(i,j) < sFiltered(i,j-1)))
@@ -281,12 +241,12 @@ void canny::nonMaxSupp()
                     nonMaxSupped(i-1, j-1) = 0;
             }
         }
-        // cout << '\n';
+
     }
 
 }
 
-void canny::threshold(CImg<unsigned char> imgin,int low, int high)
+void Canny::threshold(CImg<unsigned char> imgin,int low, int high)
 {
     if(low > 255)
         low = 255;

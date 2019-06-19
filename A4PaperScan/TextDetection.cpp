@@ -8,6 +8,14 @@
 
 #include "TextDetection.hpp"
 
+void filterBySize(const CImg<>& image, vector<Rect>& proposals);
+
+void filterByAspectRatio(vector<Rect>& p);
+
+void filterByDuplicate(vector<Rect>& p);
+
+void padRegion(const CImg<>& image, vector<Rect>& p, int padding);
+
 struct Block_1D {
     int begin;
     int end;
@@ -39,13 +47,11 @@ bool rectLRTB(const Rect& a, const Rect& b) {
     return tie(a.y, a.x) < tie(b.y, b.x);
 }
 
-vector<Rect> text_detection(CImg<> image) {
+vector<Rect> text_contourDetection(CImg<> image) {
  
     CImg<float> tempImage = image.get_RGBtoYCbCr().get_channel(0);
     ct::Contour contours(tempImage);
     vector<ct::Rect> proposals = contours.extractRegions();
-    
-//    vector<Rect> proposals = ss::selectiveSearch(image, 500, 3, 25, 200, 5000, 5);
     
     filterBySize(image, proposals);
     
@@ -59,7 +65,6 @@ vector<Rect> text_detection(CImg<> image) {
     
 //    RectangleAll(image, proposals);
     
-//    sort(proposals.begin(), proposals.end(), rectLRTB);
     ScanLineDet sld(image._height);
     ct::vector<Rect> sorted = sld.getSorted(proposals);
     

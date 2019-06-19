@@ -1,4 +1,4 @@
-#pragma once
+
 /*
 *	Image Warping from Quadlateral to quadlateral	
 *	Implemented in two ways: 

@@ -59,7 +59,6 @@ namespace ct {
             
             _img(t.x, t.y) = nextLabel;
             contour->push_back(ContourNode(Point(t.x, t.y), nextLabel));
-//            cout << "Adding to contour: " << contour << " x:" << t.x << " y:" << t.y << endl;
             
             for (int i = -1; i <= 1; i++)
             {
@@ -68,7 +67,6 @@ namespace ct {
                     if ( t.x + i >= 0 && t.y + j >= 0 && t.x + i < _img._width && t.y + j < _img._height )
                         if (!(i == 0 && j == 0) && _img(t.x + i, t.y + j) > 0.9)
                         {
-                            //                    traverseContour(x + i, y + j, contour);
                             traverseOrder.push(Point(t.x + i, t.y + j));
                         }
                 }
@@ -98,7 +96,6 @@ namespace ct {
             
             
             }
-//            cout << minX << " " << minY << " " << maxX << " " << maxY << endl;
             regions.push_back(Rect(minX, minY, maxX - minX, maxY - minY));
         }
         

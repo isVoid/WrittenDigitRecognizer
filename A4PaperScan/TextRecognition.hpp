@@ -10,7 +10,6 @@
 #define TextRecognition_hpp
 
 #include "headers.h"
-//#include "selective_search.hpp"
 #include "Contour.hpp"
 #include <svm.h>
 

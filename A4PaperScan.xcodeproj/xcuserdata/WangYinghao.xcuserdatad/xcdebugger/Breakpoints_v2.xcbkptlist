@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Hough_transform.cpp"
-            timestampString = "582628713.186403"
+            timestampString = "582632837.332808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "Hough_transform::kMeansFiltering()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Hough_transform.cpp"
-            timestampString = "582628713.1872931"
+            timestampString = "582632837.333251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "Hough_transform::process(int vt, float tf, int ft)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Hough_transform.cpp"
-            timestampString = "582628713.187646"
+            timestampString = "582632837.333373"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "Hough_transform::kMeansFiltering()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Hough_transform.cpp"
-            timestampString = "582628713.18795"
+            timestampString = "582632837.333478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
             landmarkName = "Hough_transform::kMeansFiltering()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,13 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Warping.cpp"
-            timestampString = "582628713.188248"
+            timestampString = "582632837.333582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
-            landmarkName = "Warping::projTransform()"
-            landmarkType = "7">
+            startingLineNumber = "372"
+            endingLineNumber = "372">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -122,13 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Warping.cpp"
-            timestampString = "582628713.18857"
+            timestampString = "582632837.33392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
-            landmarkName = "Warping::projTransform()"
-            landmarkType = "7">
+            startingLineNumber = "364"
+            endingLineNumber = "364">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,11 +134,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/TextDetection.cpp"
-            timestampString = "582628713.1887259"
+            timestampString = "582634682.049096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "text_detection(CImg&lt;&gt; image)"
             landmarkType = "9">
          </BreakpointContent>
@@ -154,11 +150,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/TextDetection.cpp"
-            timestampString = "582628713.189231"
+            timestampString = "582634682.0497791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "text_detection(CImg&lt;&gt; image)"
             landmarkType = "9">
          </BreakpointContent>
@@ -170,7 +166,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/TextRecognition.cpp"
-            timestampString = "582628713.189561"
+            timestampString = "582632837.334729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "154"
@@ -186,7 +182,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Contour.cpp"
-            timestampString = "582628713.189912"
+            timestampString = "582632837.335089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -202,7 +198,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Contour.cpp"
-            timestampString = "582628713.190158"
+            timestampString = "582632837.3354191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -218,7 +214,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A4PaperScan/Contour.cpp"
-            timestampString = "582628713.190221"
+            timestampString = "582632837.3355139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"

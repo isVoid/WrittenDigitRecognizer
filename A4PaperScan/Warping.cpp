@@ -92,7 +92,6 @@ CImg<unsigned char> Warping::processWithProjectionTransform() {
 	}
 
 	//Perform projection Tranform
-	printf("Projection Transforming...\n");
 	projTransform();
 
 	return warped;
@@ -124,8 +123,6 @@ CImg<unsigned char> Warping::processWithInterpolate() {
 
 	if(verbose) img.display();
 
-	//Perform interpolation
-	printf("Interpolating...\n");
 	interpolate();
 
 	return warped;

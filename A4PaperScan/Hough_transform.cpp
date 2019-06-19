@@ -6,7 +6,6 @@
 
 #include "headers.h"
 #include "Hough_transform.h"
-#include "harris.h"
 #include <float.h>
 
 using namespace cimg_library;
@@ -83,9 +82,6 @@ CImg<unsigned char> Hough_transform::process(int vt, float tf, int ft) {
     if (debug_disp)
         threshold_hough.display();
     
-    // printf("performing local filtering...\n" );
-    // localFiltering();
-
     kMeansFiltering();
 
     if(debug_disp) 
@@ -262,7 +258,7 @@ void Hough_transform::localFiltering() {
 	}
 
 
-	if(debug_disp) printf("Filtered Param points: %d\n", filtered.size());
+    if(debug_disp) printf("Filtered Param points: %lu\n", filtered.size());
 
 }
 
@@ -434,86 +430,6 @@ void Hough_transform::removeClosePoints() {
 
 }
 
-CImg<unsigned char> Hough_transform::repositionWithHarris() {
-    
-    int local_size = 200;
-    
-    for (int i = 0; i < intersects.size(); i++) {
-        
-        // CImg<unsigned char> local(local_size, local_size, 1, 3);
-        
-        int x0 = intersects[i].x - local_size / 2;
-        int y0 = intersects[i].y - local_size / 2;
-        
-        if (x0 < 0) x0 = 0;
-        if (y0 < 0) y0 = 0;
-        if (x0 + local_size > img._width) x0 = img._width - local_size;
-        if (y0 + local_size > img._height) y0 = img._height - local_size;
-        
-        CImg<unsigned char> local = img.get_crop(x0, y0, 0, 0, x0 + local_size, y0 + local_size, 0, 3);
-        CImg<float> local_gray(local._width, local._height);
-        
-        // local = local.get_RGBtoYCbCr().get_channel(0);
-        
-        cimg_forXY(local, x, y) {
-            
-            local_gray(x, y) = 0.2126 * local(x,y,0) +
-            0.7152 * local(x,y,1) +
-            0.0722 * local(x,y,2);
-        }
-        
-        CImg<float> medianFilteredGray(local_gray._width, local_gray._width);
-        CImg<> N(5,5);
-        cimg_forC(local_gray, c)
-        cimg_for5x5(local_gray, x, y, c, 0, N, float)
-        medianFilteredGray(x,y,c) = N.median();
-        
-        if(debug_disp) medianFilteredGray.display();
-        
-        //Harris algorithm parameters
-        // Specifies the sensitivity factor of the Harris algorithm (0 < k < 0.25)
-        float k = 0.25;
-        // Size of the box filter that is applied to the integral images
-        int boxFilterSize = 3;
-        // dimension of the maxima suppression box around a maxima
-        int maximaSuppressionDimension = 3;
-        
-        int markDimension = 1;
-        
-        float percentage = 0.0001;
-        bool gauss = true;
-        
-        Harris hrs(medianFilteredGray, k, boxFilterSize, gauss, false);
-        
-        vector<pointData> resPts = hrs.getMaximaPoints(percentage, boxFilterSize, maximaSuppressionDimension);
-        
-        vector<pointData> rp;
-        // rp.push_back(resPts[resPts.size() / 2]);
-        rp.push_back(resPts[0]);
-        
-        for (int i = 1; i < resPts.size(); i++) {
-            rp[0].p.x += resPts[i].p.x;
-            rp[0].p.y += resPts[i].p.y;
-        }
-        
-        rp[0].p.x /= float(resPts.size());
-        rp[0].p.y /= float(resPts.size());
-        
-        CImg<float> result = Util::MarkInImage(medianFilteredGray, rp, markDimension);
-        
-        //		if(debug_disp) result.display();
-        
-        int x_off = rp[0].p.x - local_size / 2;
-        int y_off = rp[0].p.y - local_size / 2;
-        
-        intersects[i].x += x_off;
-        intersects[i].y += y_off;
-        
-    }
-    
-    return result;
-}
-
 void addToIntersects(vector<point>& intersects, point p) {
 
 	bool add = true;
@@ -554,8 +470,6 @@ void Hough_transform::extractLargestRectangle() {
 					l2 = mean.L2DistTo(p2), l3 = mean.L2DistTo(p3);
 
 					float dist = abs(l0 - l1);
-
-					printf("dist: %f, max: %d\n", dist, max);
 
 					if (abs(l0 - l1) < tolerance && abs(l0 - l2) < tolerance && abs(l0 - l3) < tolerance &&
 						abs(l1 - l2) < tolerance && abs(l1 - l3) < tolerance &&

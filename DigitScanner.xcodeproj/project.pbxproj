@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC03383722BA4C1900FC83AB /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC03383522BA4C1800FC83AB /* svm.cpp */; };
+		FC4E080A22BB0D1C005F1EF9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080122BB0D1C005F1EF9 /* main.cpp */; };
+		FC4E080B22BB0D1C005F1EF9 /* Canny.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080222BB0D1C005F1EF9 /* Canny.cpp */; };
+		FC4E080C22BB0D1C005F1EF9 /* TextDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080322BB0D1C005F1EF9 /* TextDetection.cpp */; };
+		FC4E080D22BB0D1C005F1EF9 /* Hough_transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080422BB0D1C005F1EF9 /* Hough_transform.cpp */; };
+		FC4E080E22BB0D1C005F1EF9 /* TextRecognition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080522BB0D1C005F1EF9 /* TextRecognition.cpp */; };
+		FC4E080F22BB0D1C005F1EF9 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080622BB0D1C005F1EF9 /* util.cpp */; };
+		FC4E081022BB0D1C005F1EF9 /* C_TF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080722BB0D1C005F1EF9 /* C_TF.cpp */; };
+		FC4E081122BB0D1C005F1EF9 /* Warping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080822BB0D1C005F1EF9 /* Warping.cpp */; };
+		FC4E081222BB0D1C005F1EF9 /* Contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080922BB0D1C005F1EF9 /* Contour.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FC5817B81EF228CA00895FAD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FC03383522BA4C1800FC83AB /* svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = svm.cpp; path = include/svm.cpp; sourceTree = "<group>"; };
+		FC03383622BA4C1800FC83AB /* svm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = svm.h; path = include/svm.h; sourceTree = "<group>"; };
+		FC4E07F922BB0D0E005F1EF9 /* TextRecognition.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TextRecognition.hpp; path = src/TextRecognition.hpp; sourceTree = "<group>"; };
+		FC4E07FA22BB0D0E005F1EF9 /* C_TF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = C_TF.hpp; path = src/C_TF.hpp; sourceTree = "<group>"; };
+		FC4E07FB22BB0D0E005F1EF9 /* TextDetection.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TextDetection.hpp; path = src/TextDetection.hpp; sourceTree = "<group>"; };
+		FC4E07FC22BB0D0E005F1EF9 /* headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = headers.h; path = src/headers.h; sourceTree = "<group>"; };
+		FC4E07FD22BB0D0E005F1EF9 /* Canny.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Canny.h; path = src/Canny.h; sourceTree = "<group>"; };
+		FC4E07FE22BB0D0E005F1EF9 /* Warping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Warping.h; path = src/Warping.h; sourceTree = "<group>"; };
+		FC4E07FF22BB0D0E005F1EF9 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = src/util.h; sourceTree = "<group>"; };
+		FC4E080022BB0D0E005F1EF9 /* Hough_transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hough_transform.h; path = src/Hough_transform.h; sourceTree = "<group>"; };
+		FC4E080122BB0D1C005F1EF9 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080222BB0D1C005F1EF9 /* Canny.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Canny.cpp; path = src/Canny.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080322BB0D1C005F1EF9 /* TextDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextDetection.cpp; path = src/TextDetection.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080422BB0D1C005F1EF9 /* Hough_transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hough_transform.cpp; path = src/Hough_transform.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080522BB0D1C005F1EF9 /* TextRecognition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextRecognition.cpp; path = src/TextRecognition.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080622BB0D1C005F1EF9 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = src/util.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080722BB0D1C005F1EF9 /* C_TF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = C_TF.cpp; path = src/C_TF.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080822BB0D1C005F1EF9 /* Warping.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Warping.cpp; path = src/Warping.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080922BB0D1C005F1EF9 /* Contour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Contour.cpp; path = src/Contour.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E081322BB0D26005F1EF9 /* Contour.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Contour.hpp; path = src/Contour.hpp; sourceTree = "<group>"; };
+		FC4E081422BB0D26005F1EF9 /* ScanLineDetermination.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ScanLineDetermination.hpp; path = src/ScanLineDetermination.hpp; sourceTree = "<group>"; };
+		FC5817BA1EF228CA00895FAD /* DigitScanner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DigitScanner; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC5817B71EF228CA00895FAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC5817B11EF228CA00895FAD = {
+			isa = PBXGroup;
+			children = (
+				FC03383522BA4C1800FC83AB /* svm.cpp */,
+				FC03383622BA4C1800FC83AB /* svm.h */,
+				FCABFC6D1EF3AFC2007A61E5 /* headers */,
+				FC5817BC1EF228CA00895FAD /* sources */,
+				FC5817BB1EF228CA00895FAD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC5817BB1EF228CA00895FAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC5817BA1EF228CA00895FAD /* DigitScanner */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC5817BC1EF228CA00895FAD /* sources */ = {
+			isa = PBXGroup;
+			children = (
+				FC4E080722BB0D1C005F1EF9 /* C_TF.cpp */,
+				FC4E080222BB0D1C005F1EF9 /* Canny.cpp */,
+				FC4E080922BB0D1C005F1EF9 /* Contour.cpp */,
+				FC4E080422BB0D1C005F1EF9 /* Hough_transform.cpp */,
+				FC4E080122BB0D1C005F1EF9 /* main.cpp */,
+				FC4E080322BB0D1C005F1EF9 /* TextDetection.cpp */,
+				FC4E080522BB0D1C005F1EF9 /* TextRecognition.cpp */,
+				FC4E080622BB0D1C005F1EF9 /* util.cpp */,
+				FC4E080822BB0D1C005F1EF9 /* Warping.cpp */,
+			);
+			name = sources;
+			path = DigitScanner;
+			sourceTree = "<group>";
+		};
+		FCABFC6D1EF3AFC2007A61E5 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				FC4E081322BB0D26005F1EF9 /* Contour.hpp */,
+				FC4E081422BB0D26005F1EF9 /* ScanLineDetermination.hpp */,
+				FC4E07FA22BB0D0E005F1EF9 /* C_TF.hpp */,
+				FC4E07FD22BB0D0E005F1EF9 /* Canny.h */,
+				FC4E07FC22BB0D0E005F1EF9 /* headers.h */,
+				FC4E080022BB0D0E005F1EF9 /* Hough_transform.h */,
+				FC4E07FB22BB0D0E005F1EF9 /* TextDetection.hpp */,
+				FC4E07F922BB0D0E005F1EF9 /* TextRecognition.hpp */,
+				FC4E07FF22BB0D0E005F1EF9 /* util.h */,
+				FC4E07FE22BB0D0E005F1EF9 /* Warping.h */,
+			);
+			name = headers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC5817B91EF228CA00895FAD /* DigitScanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC5817C11EF228CA00895FAD /* Build configuration list for PBXNativeTarget "DigitScanner" */;
+			buildPhases = (
+				FC5817B61EF228CA00895FAD /* Sources */,
+				FC5817B71EF228CA00895FAD /* Frameworks */,
+				FC5817B81EF228CA00895FAD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DigitScanner;
+			productName = DigitScanner;
+			productReference = FC5817BA1EF228CA00895FAD /* DigitScanner */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC5817B21EF228CA00895FAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = TSK;
+				TargetAttributes = {
+					FC5817B91EF228CA00895FAD = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FC5817B51EF228CA00895FAD /* Build configuration list for PBXProject "DigitScanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+			);
+			mainGroup = FC5817B11EF228CA00895FAD;
+			productRefGroup = FC5817BB1EF228CA00895FAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC5817B91EF228CA00895FAD /* DigitScanner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC5817B61EF228CA00895FAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC4E081222BB0D1C005F1EF9 /* Contour.cpp in Sources */,
+				FC4E080E22BB0D1C005F1EF9 /* TextRecognition.cpp in Sources */,
+				FC4E080A22BB0D1C005F1EF9 /* main.cpp in Sources */,
+				FC4E080F22BB0D1C005F1EF9 /* util.cpp in Sources */,
+				FC4E080D22BB0D1C005F1EF9 /* Hough_transform.cpp in Sources */,
+				FC03383722BA4C1900FC83AB /* svm.cpp in Sources */,
+				FC4E081022BB0D1C005F1EF9 /* C_TF.cpp in Sources */,
+				FC4E080C22BB0D1C005F1EF9 /* TextDetection.cpp in Sources */,
+				FC4E080B22BB0D1C005F1EF9 /* Canny.cpp in Sources */,
+				FC4E081122BB0D1C005F1EF9 /* Warping.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FC5817BF1EF228CA00895FAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /opt/X11/include;
+				LIBRARY_SEARCH_PATHS = /opt/X11/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "";
+				USE_HEADERMAP = YES;
+			};
+			name = Debug;
+		};
+		FC5817C01EF228CA00895FAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /opt/X11/include;
+				LIBRARY_SEARCH_PATHS = /opt/X11/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "";
+				USE_HEADERMAP = YES;
+			};
+			name = Release;
+		};
+		FC5817C21EF228CA00895FAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/jpeg/9c/include,
+					./include,
+					/opt/X11/include,
+				);
+				LD_RUNPATH_SEARCH_PATHS = $SRCROOT/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/jpeg/9c/lib,
+					/opt/X11/lib,
+					./lib,
+				);
+				OTHER_LDFLAGS = (
+					"-lpthread",
+					"-lX11",
+					"-ljpeg",
+					"-lcblas",
+					"-ltensorflow",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FC5817C31EF228CA00895FAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/jpeg/9c/include,
+					./include,
+					/opt/X11/include,
+				);
+				LD_RUNPATH_SEARCH_PATHS = $SRCROOT/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/jpeg/9c/lib,
+					/opt/X11/lib,
+					./lib,
+				);
+				OTHER_LDFLAGS = (
+					"-lpthread",
+					"-lX11",
+					"-ljpeg",
+					"-lcblas",
+					"-ltensorflow",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC5817B51EF228CA00895FAD /* Build configuration list for PBXProject "DigitScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC5817BF1EF228CA00895FAD /* Debug */,
+				FC5817C01EF228CA00895FAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC5817C11EF228CA00895FAD /* Build configuration list for PBXNativeTarget "DigitScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC5817C21EF228CA00895FAD /* Debug */,
+				FC5817C31EF228CA00895FAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC5817B21EF228CA00895FAD /* Project object */;
+}

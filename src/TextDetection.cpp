@@ -1,6 +1,6 @@
 //
 //  TextDetection.cpp
-//  A4PaperScan
+//  DigitScanner
 //
 //  Created by 王 颖豪 on 6/15/17.
 //  Copyright © 2017 TSK. All rights reserved.

@@ -36,11 +36,7 @@ int main(int argc, char** argv) {
         cout << "Example: ./scan data/input.jpg data/output.jpg output.txt" << endl;
         return -1;
     }
-    
-    for (int i = 0; i < argc; i++) {
-        cout << argv[i] << endl;
-    }
-    
+
     string original_path = string(argv[1]);
     string out_path = string(argv[2]);
     string txt_out_path = string(argv[3]);

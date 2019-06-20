@@ -1,6 +1,6 @@
 //
 //  ScanLineDetermination.hpp
-//  A4PaperScan
+//  DigitScanner
 //
 //  Created by 王 颖豪 on 7/8/17.
 //  Copyright © 2017 TSK. All rights reserved.

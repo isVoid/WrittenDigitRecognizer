@@ -63,7 +63,15 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "&quot;../../data/1.jpg&quot; 0 64 0.8 30 1 1 &quot;../../output/1.jpg&quot;"
+            argument = "../../../data/8.jpg"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "../../../output/8.bmp"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "../../../output/8.txt"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

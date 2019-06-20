@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		FC03383722BA4C1900FC83AB /* svm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC03383522BA4C1800FC83AB /* svm.cpp */; };
-		FC057E1F22B8DCD0006460A0 /* C_TF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC057E1E22B8DCD0006460A0 /* C_TF.cpp */; };
-		FC057E2C22BA4B1B006460A0 /* Canny.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC057E2A22BA4B1B006460A0 /* Canny.cpp */; };
-		FC057E2D22BA4B1B006460A0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC057E2B22BA4B1B006460A0 /* main.cpp */; };
-		FC581A921EF22A3700895FAD /* Hough_transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC581A891EF22A3700895FAD /* Hough_transform.cpp */; };
-		FC581A941EF22A3700895FAD /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC581A8C1EF22A3700895FAD /* util.cpp */; };
-		FC581A951EF22A3700895FAD /* Warping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC581A8E1EF22A3700895FAD /* Warping.cpp */; };
-		FC581BF41EF2C66D00895FAD /* TextDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC581BF21EF2C66D00895FAD /* TextDetection.cpp */; };
-		FCABFC6C1EF3AFB1007A61E5 /* TextRecognition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FCABFC6A1EF3AFB1007A61E5 /* TextRecognition.cpp */; };
-		FCC5BA7C1F10F0F90040FDFC /* Contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FCC5BA7A1F10F0F90040FDFC /* Contour.cpp */; };
+		FC4E080A22BB0D1C005F1EF9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080122BB0D1C005F1EF9 /* main.cpp */; };
+		FC4E080B22BB0D1C005F1EF9 /* Canny.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080222BB0D1C005F1EF9 /* Canny.cpp */; };
+		FC4E080C22BB0D1C005F1EF9 /* TextDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080322BB0D1C005F1EF9 /* TextDetection.cpp */; };
+		FC4E080D22BB0D1C005F1EF9 /* Hough_transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080422BB0D1C005F1EF9 /* Hough_transform.cpp */; };
+		FC4E080E22BB0D1C005F1EF9 /* TextRecognition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080522BB0D1C005F1EF9 /* TextRecognition.cpp */; };
+		FC4E080F22BB0D1C005F1EF9 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080622BB0D1C005F1EF9 /* util.cpp */; };
+		FC4E081022BB0D1C005F1EF9 /* C_TF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080722BB0D1C005F1EF9 /* C_TF.cpp */; };
+		FC4E081122BB0D1C005F1EF9 /* Warping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080822BB0D1C005F1EF9 /* Warping.cpp */; };
+		FC4E081222BB0D1C005F1EF9 /* Contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4E080922BB0D1C005F1EF9 /* Contour.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,26 +34,26 @@
 /* Begin PBXFileReference section */
 		FC03383522BA4C1800FC83AB /* svm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = svm.cpp; path = include/svm.cpp; sourceTree = "<group>"; };
 		FC03383622BA4C1800FC83AB /* svm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = svm.h; path = include/svm.h; sourceTree = "<group>"; };
-		FC057E1D22B8DCC4006460A0 /* C_TF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = C_TF.hpp; path = A4PaperScan/C_TF.hpp; sourceTree = "<group>"; };
-		FC057E1E22B8DCD0006460A0 /* C_TF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C_TF.cpp; sourceTree = "<group>"; };
-		FC057E2922BA4AF5006460A0 /* Canny.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Canny.h; path = A4PaperScan/Canny.h; sourceTree = "<group>"; };
-		FC057E2A22BA4B1B006460A0 /* Canny.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Canny.cpp; sourceTree = "<group>"; };
-		FC057E2B22BA4B1B006460A0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		FC4E07F922BB0D0E005F1EF9 /* TextRecognition.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TextRecognition.hpp; path = src/TextRecognition.hpp; sourceTree = "<group>"; };
+		FC4E07FA22BB0D0E005F1EF9 /* C_TF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = C_TF.hpp; path = src/C_TF.hpp; sourceTree = "<group>"; };
+		FC4E07FB22BB0D0E005F1EF9 /* TextDetection.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TextDetection.hpp; path = src/TextDetection.hpp; sourceTree = "<group>"; };
+		FC4E07FC22BB0D0E005F1EF9 /* headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = headers.h; path = src/headers.h; sourceTree = "<group>"; };
+		FC4E07FD22BB0D0E005F1EF9 /* Canny.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Canny.h; path = src/Canny.h; sourceTree = "<group>"; };
+		FC4E07FE22BB0D0E005F1EF9 /* Warping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Warping.h; path = src/Warping.h; sourceTree = "<group>"; };
+		FC4E07FF22BB0D0E005F1EF9 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = src/util.h; sourceTree = "<group>"; };
+		FC4E080022BB0D0E005F1EF9 /* Hough_transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hough_transform.h; path = src/Hough_transform.h; sourceTree = "<group>"; };
+		FC4E080122BB0D1C005F1EF9 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080222BB0D1C005F1EF9 /* Canny.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Canny.cpp; path = src/Canny.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080322BB0D1C005F1EF9 /* TextDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextDetection.cpp; path = src/TextDetection.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080422BB0D1C005F1EF9 /* Hough_transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hough_transform.cpp; path = src/Hough_transform.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080522BB0D1C005F1EF9 /* TextRecognition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextRecognition.cpp; path = src/TextRecognition.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080622BB0D1C005F1EF9 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = src/util.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080722BB0D1C005F1EF9 /* C_TF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = C_TF.cpp; path = src/C_TF.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080822BB0D1C005F1EF9 /* Warping.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Warping.cpp; path = src/Warping.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E080922BB0D1C005F1EF9 /* Contour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Contour.cpp; path = src/Contour.cpp; sourceTree = SOURCE_ROOT; };
+		FC4E081322BB0D26005F1EF9 /* Contour.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Contour.hpp; path = src/Contour.hpp; sourceTree = "<group>"; };
+		FC4E081422BB0D26005F1EF9 /* ScanLineDetermination.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ScanLineDetermination.hpp; path = src/ScanLineDetermination.hpp; sourceTree = "<group>"; };
 		FC5817BA1EF228CA00895FAD /* A4PaperScan */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = A4PaperScan; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC581A881EF22A3700895FAD /* headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = headers.h; path = A4PaperScan/headers.h; sourceTree = "<group>"; };
-		FC581A891EF22A3700895FAD /* Hough_transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hough_transform.cpp; sourceTree = "<group>"; };
-		FC581A8A1EF22A3700895FAD /* Hough_transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hough_transform.h; path = A4PaperScan/Hough_transform.h; sourceTree = "<group>"; };
-		FC581A8C1EF22A3700895FAD /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
-		FC581A8D1EF22A3700895FAD /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = A4PaperScan/util.h; sourceTree = "<group>"; };
-		FC581A8E1EF22A3700895FAD /* Warping.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Warping.cpp; sourceTree = "<group>"; };
-		FC581A8F1EF22A3700895FAD /* Warping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Warping.h; path = A4PaperScan/Warping.h; sourceTree = "<group>"; };
-		FC581BF21EF2C66D00895FAD /* TextDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextDetection.cpp; sourceTree = "<group>"; };
-		FC581BF31EF2C66D00895FAD /* TextDetection.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TextDetection.hpp; path = A4PaperScan/TextDetection.hpp; sourceTree = "<group>"; };
-		FCABFC6A1EF3AFB1007A61E5 /* TextRecognition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextRecognition.cpp; sourceTree = "<group>"; };
-		FCABFC6B1EF3AFB1007A61E5 /* TextRecognition.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TextRecognition.hpp; path = A4PaperScan/TextRecognition.hpp; sourceTree = "<group>"; };
-		FCC5BA7A1F10F0F90040FDFC /* Contour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Contour.cpp; sourceTree = "<group>"; };
-		FCC5BA7B1F10F0F90040FDFC /* Contour.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Contour.hpp; path = A4PaperScan/Contour.hpp; sourceTree = "<group>"; };
-		FCC5BA7E1F112B100040FDFC /* ScanLineDetermination.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ScanLineDetermination.hpp; path = A4PaperScan/ScanLineDetermination.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,15 +89,15 @@
 		FC5817BC1EF228CA00895FAD /* sources */ = {
 			isa = PBXGroup;
 			children = (
-				FC057E2A22BA4B1B006460A0 /* Canny.cpp */,
-				FC057E2B22BA4B1B006460A0 /* main.cpp */,
-				FC057E1E22B8DCD0006460A0 /* C_TF.cpp */,
-				FCC5BA7A1F10F0F90040FDFC /* Contour.cpp */,
-				FC581A891EF22A3700895FAD /* Hough_transform.cpp */,
-				FC581A8C1EF22A3700895FAD /* util.cpp */,
-				FC581A8E1EF22A3700895FAD /* Warping.cpp */,
-				FC581BF21EF2C66D00895FAD /* TextDetection.cpp */,
-				FCABFC6A1EF3AFB1007A61E5 /* TextRecognition.cpp */,
+				FC4E080722BB0D1C005F1EF9 /* C_TF.cpp */,
+				FC4E080222BB0D1C005F1EF9 /* Canny.cpp */,
+				FC4E080922BB0D1C005F1EF9 /* Contour.cpp */,
+				FC4E080422BB0D1C005F1EF9 /* Hough_transform.cpp */,
+				FC4E080122BB0D1C005F1EF9 /* main.cpp */,
+				FC4E080322BB0D1C005F1EF9 /* TextDetection.cpp */,
+				FC4E080522BB0D1C005F1EF9 /* TextRecognition.cpp */,
+				FC4E080622BB0D1C005F1EF9 /* util.cpp */,
+				FC4E080822BB0D1C005F1EF9 /* Warping.cpp */,
 			);
 			name = sources;
 			path = A4PaperScan;
@@ -106,16 +106,16 @@
 		FCABFC6D1EF3AFC2007A61E5 /* headers */ = {
 			isa = PBXGroup;
 			children = (
-				FC057E2922BA4AF5006460A0 /* Canny.h */,
-				FC057E1D22B8DCC4006460A0 /* C_TF.hpp */,
-				FCC5BA7E1F112B100040FDFC /* ScanLineDetermination.hpp */,
-				FCC5BA7B1F10F0F90040FDFC /* Contour.hpp */,
-				FC581A881EF22A3700895FAD /* headers.h */,
-				FC581A8A1EF22A3700895FAD /* Hough_transform.h */,
-				FC581A8D1EF22A3700895FAD /* util.h */,
-				FC581A8F1EF22A3700895FAD /* Warping.h */,
-				FC581BF31EF2C66D00895FAD /* TextDetection.hpp */,
-				FCABFC6B1EF3AFB1007A61E5 /* TextRecognition.hpp */,
+				FC4E081322BB0D26005F1EF9 /* Contour.hpp */,
+				FC4E081422BB0D26005F1EF9 /* ScanLineDetermination.hpp */,
+				FC4E07FA22BB0D0E005F1EF9 /* C_TF.hpp */,
+				FC4E07FD22BB0D0E005F1EF9 /* Canny.h */,
+				FC4E07FC22BB0D0E005F1EF9 /* headers.h */,
+				FC4E080022BB0D0E005F1EF9 /* Hough_transform.h */,
+				FC4E07FB22BB0D0E005F1EF9 /* TextDetection.hpp */,
+				FC4E07F922BB0D0E005F1EF9 /* TextRecognition.hpp */,
+				FC4E07FF22BB0D0E005F1EF9 /* util.h */,
+				FC4E07FE22BB0D0E005F1EF9 /* Warping.h */,
 			);
 			name = headers;
 			sourceTree = "<group>";
@@ -178,16 +178,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4E081222BB0D1C005F1EF9 /* Contour.cpp in Sources */,
+				FC4E080E22BB0D1C005F1EF9 /* TextRecognition.cpp in Sources */,
+				FC4E080A22BB0D1C005F1EF9 /* main.cpp in Sources */,
+				FC4E080F22BB0D1C005F1EF9 /* util.cpp in Sources */,
+				FC4E080D22BB0D1C005F1EF9 /* Hough_transform.cpp in Sources */,
 				FC03383722BA4C1900FC83AB /* svm.cpp in Sources */,
-				FC057E1F22B8DCD0006460A0 /* C_TF.cpp in Sources */,
-				FCC5BA7C1F10F0F90040FDFC /* Contour.cpp in Sources */,
-				FCABFC6C1EF3AFB1007A61E5 /* TextRecognition.cpp in Sources */,
-				FC581BF41EF2C66D00895FAD /* TextDetection.cpp in Sources */,
-				FC581A951EF22A3700895FAD /* Warping.cpp in Sources */,
-				FC057E2C22BA4B1B006460A0 /* Canny.cpp in Sources */,
-				FC581A921EF22A3700895FAD /* Hough_transform.cpp in Sources */,
-				FC581A941EF22A3700895FAD /* util.cpp in Sources */,
-				FC057E2D22BA4B1B006460A0 /* main.cpp in Sources */,
+				FC4E081022BB0D1C005F1EF9 /* C_TF.cpp in Sources */,
+				FC4E080C22BB0D1C005F1EF9 /* TextDetection.cpp in Sources */,
+				FC4E080B22BB0D1C005F1EF9 /* Canny.cpp in Sources */,
+				FC4E081122BB0D1C005F1EF9 /* Warping.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

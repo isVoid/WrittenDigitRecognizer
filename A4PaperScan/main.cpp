@@ -35,9 +35,9 @@ int main(int argc, char** argv) {
     
     load_tfmodel();
     
-    string original_path = "../../../data/4.jpg";
-    string out_path = "../../../output/4.bmp";
-    string txt_out_path = "../../../output/4.txt";
+    string original_path = "../../../data/8.jpg";
+    string out_path = "../../../output/8.bmp";
+    string txt_out_path = "../../../output/8.txt";
     
 	//Get image, resize
 	CImg<unsigned char> img(original_path.c_str());
@@ -69,7 +69,7 @@ int main(int argc, char** argv) {
     vector<ct::Rect> proposals = text_contourDetection(eroded);
     
     //Regocnize texts
-    CImg<unsigned char> less_erode = warped_result.get_erode(2);
+    CImg<unsigned char> less_erode = warped_result.get_erode(3);
     vector<int> numbers = tfrecognize_num(less_erode, proposals);
     
     //Writing texts to image
